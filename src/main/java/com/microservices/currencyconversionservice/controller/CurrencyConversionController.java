@@ -20,7 +20,7 @@ public class CurrencyConversionController {
         this.exchangeProxy = exchangeProxy;
     }
 
-    @GetMapping("/currency-exchange/{from}/to/{to}/quantity/{quantity}")
+    @GetMapping("/currency-conversion/{from}/to/{to}/quantity/{quantity}")
     public CurrencyConversion calculateConversion(@PathVariable BigDecimal quantity, @PathVariable String from, @PathVariable String to) {
 
         HashMap<String, String> variables = new HashMap<>();
@@ -42,7 +42,7 @@ public class CurrencyConversionController {
                 , quantity);
     }
 
-    @GetMapping("/currency-exchange-feign/{from}/to/{to}/quantity/{quantity}")
+    @GetMapping("/currency-conversion-feign/{from}/to/{to}/quantity/{quantity}")
     public CurrencyConversion calculateConversionFeign(@PathVariable BigDecimal quantity, @PathVariable String from, @PathVariable String to) {
 
 
